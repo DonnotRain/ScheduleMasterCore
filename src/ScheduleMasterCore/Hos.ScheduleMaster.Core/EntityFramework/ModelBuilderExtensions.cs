@@ -163,16 +163,15 @@ namespace Hos.ScheduleMaster.Core.EntityFramework
                 case DbProvider.SQLServer:
                     builder.UseSqlServer(conn);
                     break;
-                case DbProvider.MySQL:
-                    builder.UseMySql(conn);
-                    break;
                 case DbProvider.PostgreSQL:
                     builder.UseNpgsql(conn);
                     break;
+                case DbProvider.MySQL:
                 default:
-                    builder.UseMySql(conn);
+                    builder.UseMySQL(conn);
                     break;
             }
+
             return builder;
         }
 
@@ -212,6 +211,7 @@ namespace Hos.ScheduleMaster.Core.EntityFramework
                     });
                 }
             }
+
             return builder;
         }
 

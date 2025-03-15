@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 namespace Hos.ScheduleMaster.Core.Migrations
 {
@@ -13,7 +14,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     scheduleid = table.Column<Guid>(nullable: false),
                     workername = table.Column<string>(nullable: true)
                 },
@@ -43,7 +44,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     scheduleid = table.Column<Guid>(nullable: false),
                     userid = table.Column<int>(nullable: false)
                 },
@@ -71,7 +72,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     scheduleid = table.Column<Guid>(nullable: false),
                     childid = table.Column<Guid>(nullable: false)
                 },
@@ -169,7 +170,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     category = table.Column<int>(nullable: false),
                     message = table.Column<string>(nullable: false),
                     stacktrace = table.Column<string>(nullable: true),
@@ -188,7 +189,7 @@ namespace Hos.ScheduleMaster.Core.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     username = table.Column<string>(nullable: false),
                     password = table.Column<string>(nullable: false),
                     realname = table.Column<string>(nullable: false),

@@ -37,10 +37,10 @@ namespace Hos.ScheduleMaster.xUnitTest.Mock.Master
             mockHttpContext.Setup(s => s.User).Returns(user);
             mockHttpContext.Setup(x => x.Request).Returns(new DefaultHttpContext().Request);
 
-
             IServiceCollection services = new ServiceCollection();
+            string conn = "Data Source=192.168.8.27;Database=schedule_master;User ID=root;Password=123456;pooling=true;CharSet=utf8;port=3306;sslmode=none;TreatTinyAsBoolean=true";
             //EF数据库上下文
-            services.AddDbContext<SmDbContext>(option => option.UseMySql("Data Source=192.168.8.27;Database=schedule_master;User ID=root;Password=123456;pooling=true;CharSet=utf8;port=3306;sslmode=none;TreatTinyAsBoolean=true"));
+            services.AddDbContext<SmDbContext>(option => option.UseMySQL(conn));
             //注入Uow依赖
             services.AddScoped<IUnitOfWork, UnitOfWork<SmDbContext>>();
             services.AddAppServices();
